@@ -24,7 +24,7 @@ Similar to Pinia, sodayo recommends `src/stores` as a directory for storing the 
 
 ### Creating a store
 
-Let's create a new store - how about calling it an "app"? (You need to create `app.(js|ts)` under `src/stores`)
+Let's create a new store - how about calling it "app"? (You need to create `app.(js|ts)` under `src/stores`)
 Then, we need to initialize it.
 
 ```ts
@@ -34,7 +34,7 @@ import { defineStore, useAtom } from "sodayo";
 export const useAppStore = () => {
   const useDefine = () => { // See why it's so named below
     const count = useAtom(0);
-    const inc = (n? = 1) => { count.value += n; };
+    const inc = (n = 1) => { count.value += n; };
     return {
       count,
       inc,
