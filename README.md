@@ -5,7 +5,17 @@
 ## Introduction
 `sodayo` is a state management for React.
 
-Inspired by [Pinia](https://github.com/vuejs/pinia) and [Resso](https://github.com/nanxiaobei/resso).
+This project is inspired by [Pinia](https://github.com/vuejs/pinia) and [Resso](https://github.com/nanxiaobei/resso).
+
+## Installation
+```bash
+// NPM
+$ npm i -S sodayo
+// Yarn
+$ yarn add sodayo
+// PNPM
+$ pnpm add sodayo
+```
 
 ## Docs
 TODO
