@@ -13,6 +13,8 @@ function App() {
         <p>
           count is: {store.count}
           <br />
+          times ten: {store.tenTimesCount}
+          <br />
           <button type="button" onClick={() => store.inc()}>
             Add 1
           </button>
