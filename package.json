@@ -44,8 +44,7 @@
     "prepublishOnly": "nr build",
     "play": "npm -C playground run dev",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "test": "vitest"
   },
   "peerDependencies": {
     "react": "*"
