@@ -6,12 +6,14 @@ specifiers:
   '@so1ve/eslint-config': ^0.18.9
   '@types/node': ^17.0.23
   '@types/react': ^17.0.43
+  '@types/react-dom': ^17.0.14
   bumpp: ^7.1.1
   eslint: ^8.11.0
   eslint-plugin-react-hooks: ^4.4.0
   jiti: ^1.13.0
   pnpm: ^6.32.3
   react: ^18.0.0
+  react-dom: ^18.0.0
   rimraf: ^3.0.2
   typescript: ^4.6.2
   unbuild: ^0.7.0
@@ -20,6 +22,7 @@ specifiers:
 
 dependencies:
   react: 18.0.0
+  react-dom: 18.0.0_react@18.0.0
 
 devDependencies:
   '@antfu/ni': 0.13.2
@@ -27,6 +30,7 @@ devDependencies:
   '@so1ve/eslint-config': 0.18.11_eslint@8.11.0+typescript@4.6.2
   '@types/node': 17.0.23
   '@types/react': 17.0.43
+  '@types/react-dom': 17.0.14
   bumpp: 7.1.1
   eslint: 8.11.0
   eslint-plugin-react-hooks: 4.4.0_eslint@8.11.0
@@ -349,6 +353,12 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
+    dev: true
+
+  /@types/react-dom/17.0.14:
+    resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==}
+    dependencies:
+      '@types/react': 17.0.43
     dev: true
 
   /@types/react/17.0.43:
@@ -2788,6 +2798,16 @@ packages:
     resolution: {integrity: sha512-dB15eXv3p2jDlbOiNLyMabYg1/sXvppd8DP2J3EOCQ0AkuSXCW2tP7mnVouVLJKgUMY6yP0kcQDVpLCN13h4Xg==}
     dev: true
 
+  /react-dom/18.0.0_react@18.0.0:
+    resolution: {integrity: sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.0.0
+      scheduler: 0.21.0
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -2928,6 +2948,12 @@ packages:
     dependencies:
       regexp-tree: 0.1.24
     dev: true
+
+  /scheduler/0.21.0:
+    resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
 
   /scule/0.2.1:
     resolution: {integrity: sha512-M9gnWtn3J0W+UhJOHmBxBTwv8mZCan5i1Himp60t6vvZcor0wr+IM0URKmIglsWJ7bRujNAVVN77fp+uZaWoKg==}
