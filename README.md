@@ -73,7 +73,7 @@ function Page() {
 }
 ```
 
-You might be confused - where did the `value property of count`? In fact, sodayo does a layer of wrappers internally so that you don't have to annoy and type `.value` in your code every time. 
+You might be confused - where is the `value property of count`? In fact, sodayo hAS a layer internally so that you don't have to annoy and type `.value` in your code every time. 
 
 PS: You can't modify the count in the component, you can only modify it through the mutation defined in the store. Because the top-level Proxy does not implement the modification operation on the value.
 
