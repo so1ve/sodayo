@@ -1,7 +1,7 @@
 import type { Store, UnwrapAtom } from "./types";
 import { unwrapAtom } from "./utils";
 
-export type DefineStoreResult<State extends Store> = () => {
+export type DefineStoreResult<State extends Store> = {
   [K in keyof State]: UnwrapAtom<State[K]>
 };
 export function defineStore<State extends Store>(createStore: () => State): DefineStoreResult<State> {
