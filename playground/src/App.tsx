@@ -11,8 +11,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
+          count is: {store.count}
+          <br />
           <button type="button" onClick={() => store.inc()}>
-            count is: {store.count}
+            Add 1
+          </button>
+          <button type="button" onClick={() => store.inc(10)}>
+            Add 10
           </button>
         </p>
         <p>
