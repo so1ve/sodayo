@@ -9,5 +9,5 @@ export const useAppStore = () => {
       inc,
     };
   };
-  return defineStore(useDefine);
+  return defineStore(useDefine)();
 };
