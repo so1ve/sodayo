@@ -79,6 +79,30 @@ PS: You can't modify the count in the component, you can only modify it through 
 
 That's it! You already understand how to use sodayo. Go and develop your project!
 
+### Advanced
+
+#### Getters
+
+Getter atoms are supported since v0.2.0. You can use it like this:
+```ts
+import { defineStore, useAtom } from "sodayo";
+
+export const useAppStore = () => {
+  const useDefine = () => {
+    const count = useAtom(0);
+    const doubled = useAtom(() => count.value * 2);
+    const inc = (n = 1) => { count.value += n; };
+    return {
+      count,
+      doubled,
+      inc,
+    };
+  };
+  return defineStore(useDefine);
+};
+````
+After that, you can use it like a normal atom.
+
 ## License
 
 [MIT](./LICENSE) License © 2021 [Ray](https://github.com/so1ve)
