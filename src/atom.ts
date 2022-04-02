@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Atom } from "./types";
 
-export function useAtom<T>(value: (() => T)): Atom<T>;
+export function useAtom<T>(value: (() => T)): Atom<T, true>;
 export function useAtom<T>(value: T): Atom<T>;
 export function useAtom(value: any): any {
   if (typeof value === "function") {
