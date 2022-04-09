@@ -100,6 +100,10 @@ export const useAppStore = defineStore(() => {
 ````
 After that, you can use it like a normal atom.
 
+## Special thanks
+
+Thanks to [@nanxiaobei](https://github.com/nanxiaobei), his code saved me.
+
 ## License
 
 [MIT](./LICENSE) License © 2021 [Ray](https://github.com/so1ve)

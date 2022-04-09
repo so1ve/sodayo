@@ -19,10 +19,10 @@ export function atom(value: any): any {
     };
   }
 
+  // Thanks to nanxiaobei!!!! Copied from resso
+
   const listeners = new Set<Fn>();
-
   let v = value;
-
   const subscribe = (listener: Fn) => {
     listeners.add(listener);
     return () => listeners.delete(listener);
