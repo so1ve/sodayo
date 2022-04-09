@@ -32,19 +32,16 @@ Then, we need to initialize it.
 
 ```ts
 // `src/stores/app.ts`
-import { defineStore, useAtom } from "sodayo";
+import { atom, defineStore } from "sodayo";
 
-export const useAppStore = () => {
-  const useDefine = () => { // See why it's so named below
-    const count = useAtom(0);
-    const inc = (n = 1) => { count.value += n; };
-    return {
-      count,
-      inc,
-    };
+export const useAppStore = defineStore(() => { // See why it's so named below
+  const count = atom(0);
+  const inc = (n = 1) => { count.value += n; };
+  return {
+    count,
+    inc,
   };
-  return defineStore(useDefine);
-};
+});
 ```
 
 PS: The reason for using "useXXX" as the name instead of "XXX" is React's limitation on hooks: you can only call another hook in a function that starts with "use".
@@ -88,21 +85,18 @@ That's it! You already understand how to use sodayo. Go and develop your project
 
 Getter atoms are supported since v0.2.0. You can use it like this:
 ```ts
-import { defineStore, useAtom } from "sodayo";
+import { atom, defineStore } from "sodayo";
 
-export const useAppStore = () => {
-  const useDefine = () => {
-    const count = useAtom(0);
-    const doubled = useAtom(() => count.value * 2);
-    const inc = (n = 1) => { count.value += n; };
-    return {
-      count,
-      doubled,
-      inc,
-    };
+export const useAppStore = defineStore(() => {
+  const count = atom(0);
+  const doubled = atom(() => count.value * 2);
+  const inc = (n = 1) => { count.value += n; };
+  return {
+    count,
+    doubled,
+    inc,
   };
-  return defineStore(useDefine);
-};
+});
 ````
 After that, you can use it like a normal atom.
 

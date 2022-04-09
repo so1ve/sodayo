@@ -1,42 +1,49 @@
 lockfileVersion: 5.3
 
-specifiers:
-  '@antfu/ni': ^0.13.2
-  '@babel/types': ^7.17.0
-  '@so1ve/eslint-config': ^0.18.9
-  '@types/react': ^17.0.43
-  '@types/react-dom': ^17.0.14
-  bumpp: ^7.1.1
-  eslint: ^8.11.0
-  eslint-plugin-react-hooks: ^4.4.0
-  jiti: ^1.13.0
-  pnpm: ^6.32.3
-  react: ^18.0.0
-  react-dom: ^18.0.0
-  rimraf: ^3.0.2
-  typescript: ^4.6.2
-  unbuild: ^0.7.0
-  vite: ^2.8.6
-  vitest: ^0.7.10
+importers:
 
-devDependencies:
-  '@antfu/ni': 0.13.2
-  '@babel/types': 7.17.0
-  '@so1ve/eslint-config': 0.18.11_eslint@8.11.0+typescript@4.6.2
-  '@types/react': 17.0.43
-  '@types/react-dom': 17.0.14
-  bumpp: 7.1.1
-  eslint: 8.11.0
-  eslint-plugin-react-hooks: 4.4.0_eslint@8.11.0
-  jiti: 1.13.0
-  pnpm: 6.32.3
-  react: 18.0.0
-  react-dom: 18.0.0_react@18.0.0
-  rimraf: 3.0.2
-  typescript: 4.6.2
-  unbuild: 0.7.0
-  vite: 2.8.6
-  vitest: 0.7.10
+  .:
+    specifiers:
+      '@antfu/ni': ^0.13.2
+      '@babel/types': ^7.17.0
+      '@so1ve/eslint-config': ^0.18.9
+      '@types/react': ^17.0.43
+      '@types/react-dom': ^17.0.14
+      '@types/use-sync-external-store': ^0.0.3
+      bumpp: ^7.1.1
+      eslint: ^8.11.0
+      eslint-plugin-react-hooks: ^4.4.0
+      jiti: ^1.13.0
+      pnpm: ^6.32.3
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      rimraf: ^3.0.2
+      typescript: ^4.6.2
+      unbuild: ^0.7.0
+      use-sync-external-store: ^1.0.0
+      vite: ^2.8.6
+      vitest: ^0.7.10
+    dependencies:
+      use-sync-external-store: 1.0.0_react@18.0.0
+    devDependencies:
+      '@antfu/ni': 0.13.2
+      '@babel/types': 7.17.0
+      '@so1ve/eslint-config': 0.18.11_eslint@8.11.0+typescript@4.6.2
+      '@types/react': 17.0.43
+      '@types/react-dom': 17.0.14
+      '@types/use-sync-external-store': 0.0.3
+      bumpp: 7.1.1
+      eslint: 8.11.0
+      eslint-plugin-react-hooks: 4.4.0_eslint@8.11.0
+      jiti: 1.13.0
+      pnpm: 6.32.3
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
+      rimraf: 3.0.2
+      typescript: 4.6.2
+      unbuild: 0.7.0
+      vite: 2.8.6
+      vitest: 0.7.10
 
 packages:
 
@@ -377,6 +384,10 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
+
+  /@types/use-sync-external-store/0.0.3:
+    resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.16.0_3fed250b11519414a4c7d52468dd6bf5:
@@ -3261,6 +3272,14 @@ packages:
     dependencies:
       punycode: 2.1.1
     dev: true
+
+  /use-sync-external-store/1.0.0_react@18.0.0:
+    resolution: {integrity: sha512-AFVsxg5GkFg8GDcxnl+Z0lMAz9rE8DGJCc28qnBuQF7lac57B5smLcT37aXpXIIPz75rW4g3eXHPjhHwdGskOw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0-rc
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /v8-compile-cache/2.2.0:
     resolution: {integrity: sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==}
