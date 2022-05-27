@@ -5,7 +5,7 @@
 A state management for React.
 
 - Easy-to-use API
-- Based on `useState`
+- Based on `useSyncExternalStore`
 - Lightweight: Gzipped ≈ `0.3KB`
 
 This project is inspired by [Pinia](https://github.com/vuejs/pinia) and [Resso](https://github.com/nanxiaobei/resso).
@@ -99,8 +99,6 @@ export const useAppStore = defineStore(() => {
 });
 ````
 After that, you can use it like a normal atom.
-
-## Special thanks
 
 ## License
 
