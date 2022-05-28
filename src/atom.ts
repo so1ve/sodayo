@@ -11,12 +11,16 @@ export function atom<T>(value: (() => T)): Atom<T, true>;
 export function atom<T>(value: T): Atom<T>;
 export function atom(value: any): any {
   if (typeof value === "function") {
-    return {
+    const wrapper = {
       __s_isAtom: true,
       get value() {
         return value();
       },
     };
+
+    Object.defineProperty(wrapper, "__s_isAtom", { value: true });
+
+    return wrapper;
   }
 
   // Thanks to nanxiaobei!!!! Copied from resso
