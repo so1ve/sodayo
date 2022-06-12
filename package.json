@@ -1,9 +1,19 @@
 {
   "name": "sodayo",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "packageManager": "pnpm@6.32.3",
-  "description": "",
-  "keywords": [],
+  "description": "A super lightweight state management for React. Inspired by Pinia and Resso.",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-state",
+    "react-state-management",
+    "state",
+    "state-management",
+    "typescript",
+    "browser",
+    "pinia"
+  ],
   "homepage": "https://github.com/so1ve/sodayo#readme",
   "bugs": {
     "url": "https://github.com/so1ve/sodayo/issues"
@@ -51,27 +61,27 @@
     "react": "*",
     "react-dom": "*"
   },
+  "dependencies": {
+    "use-sync-external-store": "^1.1.0"
+  },
   "devDependencies": {
-    "@antfu/ni": "^0.13.2",
-    "@babel/types": "^7.17.0",
-    "@so1ve/eslint-config": "^0.18.9",
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14",
+    "@antfu/ni": "^0.16.2",
+    "@babel/types": "^7.18.4",
+    "@so1ve/eslint-config": "^0.21.0",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
     "@types/use-sync-external-store": "^0.0.3",
     "bumpp": "^7.1.1",
-    "eslint": "^8.11.0",
-    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "jiti": "^1.13.0",
-    "pnpm": "^6.32.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "pnpm": "^7.2.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.6.2",
-    "unbuild": "^0.7.0",
-    "vite": "^2.8.6",
-    "vitest": "^0.7.10"
-  },
-  "dependencies": {
-    "use-sync-external-store": "^1.0.0"
+    "typescript": "^4.7.3",
+    "unbuild": "^0.7.4",
+    "vite": "^2.9.12",
+    "vitest": "^0.14.2"
   }
 }

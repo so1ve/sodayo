@@ -9,13 +9,19 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FunctionalComp></FunctionalComp>
+        <FunctionalComp />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
         <p>
-          count is: {store.count}
+          Hello Vite + React!
+        </p>
+        <p>
+          count is:
+          {" "}
+          {store.count}
           <br />
-          times ten: {store.tenTimesCount}
+          times ten:
+          {" "}
+          {store.tenTimesCount}
           <br />
           <button type="button" onClick={() => store.inc()}>
             Add 1
@@ -25,7 +31,13 @@ function App() {
           </button>
         </p>
         <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
+          Edit
+          {" "}
+          <code>
+            App.tsx
+          </code>
+          {" "}
+          and save to test HMR updates.
         </p>
         <p>
           <a

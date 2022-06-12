@@ -7,22 +7,7 @@ const batch = ReactDOM.unstable_batchedUpdates;
 
 type Fn = () => void;
 
-export function atom<T>(value: (() => T)): Atom<T, true>;
-export function atom<T>(value: T): Atom<T>;
-export function atom(value: any): any {
-  if (typeof value === "function") {
-    const wrapper = {
-      __s_isAtom: true,
-      get value() {
-        return value();
-      },
-    };
-
-    Object.defineProperty(wrapper, "__s_isAtom", { value: true });
-
-    return wrapper;
-  }
-
+export function atom<T>(value: T): Atom<T> {
   // Thanks to nanxiaobei!!!! Copied from resso
 
   const listeners = new Set<Fn>();
@@ -50,8 +35,7 @@ export function atom(value: any): any {
       try {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         return useSnapshot();
-      }
-      catch (e) {
+      } catch (e) {
         return v;
       }
     },
@@ -59,4 +43,17 @@ export function atom(value: any): any {
       setSnapshot(newVal);
     },
   };
+}
+
+export function mota<T>(value: (() => T)): Atom<T, true> {
+  const wrapper = {
+    __s_isAtom: true,
+    get value() {
+      return value();
+    },
+  };
+
+  Object.defineProperty(wrapper, "__s_isAtom", { value: true });
+
+  return wrapper as Atom<T, true>;
 }

@@ -6,7 +6,7 @@ A state management for React.
 
 - Easy-to-use API
 - Based on `useSyncExternalStore`
-- Lightweight: Gzipped ≈ `0.3KB`
+- Lightweight: Gzipped ≈ `0.7KB`
 
 This project is inspired by [Pinia](https://github.com/vuejs/pinia) and [Resso](https://github.com/nanxiaobei/resso).
 
@@ -85,11 +85,11 @@ That's it! You already understand how to use sodayo. Go and develop your project
 
 Getter atoms are supported since v0.2.0. You can use it like this:
 ```ts
-import { atom, defineStore } from "sodayo";
+import { atom, defineStore, mota } from "sodayo";
 
 export const useAppStore = defineStore(() => {
   const count = atom(0);
-  const doubled = atom(() => count.value * 2);
+  const doubled = mota(() => count.value * 2);
   const inc = (n = 1) => { count.value += n; };
   return {
     count,

@@ -5,7 +5,9 @@ export default function FunctionalComp() {
 
   return (
     <div>
-      count is: {appStore.count}
+      count is:
+      {" "}
+      {appStore.count}
     </div>
   );
 }
