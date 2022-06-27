@@ -29,8 +29,7 @@ export function atom<T>(value: T): Atom<T> {
     );
   };
 
-  return {
-    __s_isAtom: true,
+  const wrapper = {
     get value() {
       try {
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -43,16 +42,17 @@ export function atom<T>(value: T): Atom<T> {
       setSnapshot(newVal);
     },
   };
+  Object.defineProperty(wrapper, "__s_isAtom", { value: true });
+
+  return wrapper as Atom<T>;
 }
 
 export function mota<T>(value: (() => T)): Atom<T, true> {
   const wrapper = {
-    __s_isAtom: true,
     get value() {
       return value();
     },
   };
-
   Object.defineProperty(wrapper, "__s_isAtom", { value: true });
 
   return wrapper as Atom<T, true>;
