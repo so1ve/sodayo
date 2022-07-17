@@ -1,16 +1,15 @@
-import type { Store, UnwrapAtom } from "./types";
+import type { Store, StoreDefinition } from "./types";
 import { unwrapAtom } from "./utils";
 
-export type DefineStoreResult<State extends Store> = {
-  readonly [K in keyof State]: UnwrapAtom<State[K]>
-};
 export function defineStore<State extends Store>(createStore: () => State) {
   const state = createStore();
 
-  return () => new Proxy(state, {
-    get(_, key) {
-      const item = state[key as keyof State];
+  const useStore = () => new Proxy(state, {
+    get(_, k) {
+      const item = state[k as any];
       return unwrapAtom(item);
     },
-  }) as unknown as DefineStoreResult<State>;
+  }) as StoreDefinition<State>;
+
+  return useStore;
 }

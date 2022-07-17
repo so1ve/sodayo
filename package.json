@@ -55,7 +55,8 @@
     "example": "npm -C example run dev",
     "example:build": "npm -C example run build",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "*",
