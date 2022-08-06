@@ -6,7 +6,7 @@ A state management for React.
 
 - Easy-to-use API
 - Based on `useSyncExternalStore`
-- Lightweight: Gzipped ≈ `0.7KB`
+- Lightweight: Gzipped ≈ `0.2KB` (CJS + MJS + Types ≈ `0.7KB`)
 
 This project is inspired by [Pinia](https://github.com/vuejs/pinia) and [Resso](https://github.com/nanxiaobei/resso).
 
@@ -44,9 +44,7 @@ export const useAppStore = defineStore(() => { // See why it's so named below
 });
 ```
 
-PS: The reason for using "useXXX" as the name instead of "XXX" is React's limitation on hooks: you can only call another hook in a function that starts with "use".
-
-If you've used Vue and Pinia, this might be familiar. The way to create this Store comes from Pinia. And `useAtom` is a utility hook that behaves like  `ref` in `@vue/reactivity`. In `defineStore`, you can create functions to make changes to the `value` properties of these atoms, just as `inc` does. We call these functions "mutations".
+If you've used Vue and Pinia, this might be familiar. The way to create this Store comes from Pinia. And `atom` is a utility function that behaves like `ref` in `@vue/reactivity`. In `defineStore`, you can create functions to make changes to the `value` properties of these atoms, just as `inc` does. We call these functions `mutations`.
 
 ### Using a store in the component
 
@@ -54,7 +52,7 @@ In a component, you can do like this to access to the store.
 
 ```tsx
 // `src/pages/some-page.tsx`
-import { useAppStore } from "../stores/app.ts";
+import { useAppStore } from "../stores/app";
 
 function Page() {
   const store = useAppStore();
@@ -73,9 +71,9 @@ function Page() {
 }
 ```
 
-You might be confused - where is the `value property of count`? In fact, sodayo hAS a layer internally so that you don't have to annoy and type `.value` in your code every time. 
+You might be confused - where is the `value` property of count? In fact, sodayo proxied the values internally so that you don't have to annoy and type `.value` in your code every time.
 
-PS: You can't modify the count in the component, you can only modify it through the mutation defined in the store. Because the top-level Proxy does not implement the modification operation on the value.
+PS: By design, you can't modify the count in the component, you can only modify it through the mutation defined in the store. The top-level Proxy does not implement the modification operation on the value.
 
 That's it! You already understand how to use sodayo. Go and develop your project!
 
