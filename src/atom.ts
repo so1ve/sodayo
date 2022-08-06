@@ -7,20 +7,21 @@ const batch = ReactDOM.unstable_batchedUpdates;
 
 type Fn = () => void;
 
-export function atom<T>(value: T): Atom<T> {
-  // Thanks to nanxiaobei!!!! Copied from resso
+export function atom<T>(value: T) {
+  // Adapted from resso
 
-  const listeners = new Set<Fn>();
+  let listener: Fn | undefined;
   let v = value;
-  const subscribe = (listener: Fn) => {
-    listeners.add(listener);
-    return () => listeners.delete(listener);
+
+  const subscribe = (_listener: Fn) => {
+    listener = _listener;
+    return () => listener = undefined;
   };
   const getSnapshot = () => v;
   const setSnapshot = (val: any) => {
     if (val === v) return;
     v = val;
-    batch(() => listeners.forEach(listener => listener()));
+    batch(() => listener?.());
   };
   const useSnapshot = () => {
     return useSyncExternalStore(
@@ -47,7 +48,7 @@ export function atom<T>(value: T): Atom<T> {
   return wrapper as Atom<T>;
 }
 
-export function mota<T>(value: (() => T)): Atom<T, true> {
+export function mota<T>(value: (() => T)) {
   const wrapper = {
     get value() {
       return value();

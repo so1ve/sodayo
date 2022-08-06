@@ -9,7 +9,6 @@ export type Atom<
 export type Mutate = (...args: any[]) => any;
 export type StoreItem = Atom | Mutate;
 export type Store = Record<string, StoreItem>;
-export type StoreInstance<State> = State;
 export type UnwrapAtom<T> = T extends Atom<infer V> ? V : T;
 export type StoreDefinition<State extends Store> = {
   readonly [K in keyof State]: UnwrapAtom<State[K]>
