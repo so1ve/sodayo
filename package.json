@@ -1,6 +1,6 @@
 {
   "name": "sodayo",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "packageManager": "pnpm@6.32.3",
   "description": "A super lightweight state management for React. Inspired by Pinia and Resso.",
   "keywords": [
